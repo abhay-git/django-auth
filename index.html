@@ -3,18 +3,20 @@
   <head>
      Thinkster
   </head>
-  
-  <body ng-app="thinkster">
+  <script src = "angular.min.js"></script>
 
+  <body ng-app="thinkster" ng-controller="myController">
 
-
-    <script src="angular.min.js"></script>
-    <script src="thinkster.js"></script>
-    <script src="thinkster.config.js"></script>
-    <script src="authentication.module.js"></script>
-    <script src="authentication.routes.js"></script>
-    <script src="controllers/authentication.controllers.js"></script>
-    <script src="services/authentication.services.js"></script>
+  <script>
+     var app = angular.module('thinkster',[]);
+     app.controller('myController',['$scope','$http',function($scope,$http){
+        $http.get('http://127.0.0.1:8000/account/api/v1/accounts/').then(function(response){
+          console.log(response);
+        },function(error){
+          alert("fail");
+        })
+     }]);
+  </script>
 
   </body>
 
