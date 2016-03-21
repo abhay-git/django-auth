@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-        .module('routes')
+        .module('thinkster.routes')
         .config(config);
 
         config.$inject = ['$routeProvider'];

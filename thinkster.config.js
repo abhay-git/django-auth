@@ -6,11 +6,10 @@
          .module('thinkster.config')
          .config(config);
 
-   config.$inject = ['$locationProvider'];
+   		config.$inject = ['$locationProvider'];
 
-   function config($locationProvider){
-     $locationProvider.html5Mode(true);
-     $locationProvider.hasPrefix('!');
-   }
+	   function config($locationProvider){
+	   	 console.log($locationProvider);
+	   }
 
 })();

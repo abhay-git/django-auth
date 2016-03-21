@@ -1,22 +1,25 @@
 <!Doctype html>
 <html>
-  <head>
-     Thinkster
+  <head>     
   </head>
+
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+
   <script src = "angular.min.js"></script>
+  <script src="angular-route.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="bootstrap.js"></script>
+  <script src="angular-cookies.js"></script>
+  <script src = "thinkster.js"></script>
+  <script src = "thinkster.config.js"></script>
+  <script src = "authentication.routes.js"></script>
+  <script src = "authentication.module.js"></script>
+  <script src = "controllers/authentication.controllers.js"></script>
+  <script src = "services/authentication.services.js"></script> 
+  <body ng-app="thinkster">
 
-  <body ng-app="thinkster" ng-controller="myController">
 
-  <script>
-     var app = angular.module('thinkster',[]);
-     app.controller('myController',['$scope','$http',function($scope,$http){
-        $http.get('http://127.0.0.1:8000/account/api/v1/accounts/').then(function(response){
-          console.log(response);
-        },function(error){
-          alert("fail");
-        })
-     }]);
-  </script>
+  <ng-view></ng-view>
 
   </body>
 

@@ -3,23 +3,17 @@
 
    angular
          .module('thinkster',[
-         	'thinkster.config',
-            'routes',
+         	//'thinkster.config',
+            'thinkster.routes',
+            'thinkster.config',
             'thinkster.authentication'
-         ])
-         .run(run);
+         ]);
 
-   run.$inject = ['$http'];
-   
-   function run($http){
-         $http.defaults.xsrfHeaderName = 'X-CSRFToken';
-         $http.defaults.xsrfCookieName = 'csrftoken';
-   }
+   angular
+         .module('thinkster.routes',['ngRoute']);
 
    angular
          .module('thinkster.config',[]);
 
-   angular
-         .module('thinkster.routes',['ngRoute']);
 
 })();
